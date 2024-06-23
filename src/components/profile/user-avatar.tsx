@@ -13,6 +13,9 @@ import { User } from "next-auth";
 import PersonIcon from "../icons/PersonIcon";
 import GearIcon from "../icons/GearIcon";
 import ExitIcon from "../icons/ExitIcon";
+import { IoQrCode } from "react-icons/io5";
+import CustomDialog from "../custom-dialog";
+import ProfileQrCode from "../profile-qr-code";
 
 export default function UserAvatar({ user }: { user: User }) {
   const [open, setOpen] = useState(false);
@@ -39,7 +42,26 @@ export default function UserAvatar({ user }: { user: User }) {
           </Avatar>
         </PopoverTrigger>
         <PopoverContent className="mx-5 py-3 space-y-3">
-          <div className="text-center">{user.name}</div>
+          <div className="flex items-center gap-3 ml-7">
+            <Avatar>
+              <AvatarImage
+                src={`https://i.pravatar.cc/48?u=${user.id}`}
+                alt="@shadCn"
+              />
+              <AvatarFallback className="text-black">
+                {user.name?.at(0)?.toUpperCase()}
+              </AvatarFallback>
+            </Avatar>
+            <div className="">{user.name}</div>
+
+            <div className="w-fit">
+              <CustomDialog icon={<IoQrCode />}>
+                <div className="w-fit">
+                  <ProfileQrCode userId={user.id!} />
+                </div>
+              </CustomDialog>
+            </div>
+          </div>
           <div className="flex flex-col gap-1">
             <Link
               href={`/user/${user.id}`}

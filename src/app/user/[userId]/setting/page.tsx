@@ -27,6 +27,12 @@ export default function SettingPage({ params }: Params) {
         >
           Change User Password
         </Link>
+        <Link
+          href={`/user/${params.userId}/setting/change-qr-code`}
+          className="bg-gray-100 mx-3 rounded-md my-1 hover:cursor-pointer hover:bg-gray-500 hover:text-white p-3"
+        >
+          Change User Profile Qr-Code
+        </Link>
         <Button
           variant={"destructive"}
           className="mx-3 rounded-md my-1 p-3"

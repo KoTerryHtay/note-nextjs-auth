@@ -15,7 +15,7 @@ export default function CustomDialog({
   icon,
 }: {
   children: React.ReactNode;
-  text: "Edit" | "Delete";
+  text?: "Edit" | "Delete";
   icon: React.ReactNode;
 }) {
   return (
@@ -25,7 +25,9 @@ export default function CustomDialog({
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="text-start">{text} Note</DialogTitle>
+          <DialogTitle className="text-start">
+            {text} {text && "Note"}
+          </DialogTitle>
           <DialogDescription>{children}</DialogDescription>
         </DialogHeader>
       </DialogContent>

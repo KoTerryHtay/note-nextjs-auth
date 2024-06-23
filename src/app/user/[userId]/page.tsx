@@ -1,4 +1,3 @@
-import checkAuthorization from "@/actions/check-authorization";
 import { auth } from "@/auth";
 import PostForm from "@/components/post-form";
 import { db } from "@/db";
@@ -39,9 +38,6 @@ export default async function UserProfileDetailPage({ params }: Params) {
 
   return (
     <div>
-      <div>
-        <div>UserProfile Detail Page {params.userId}</div>
-      </div>
       <div>
         {posts?.length ? (
           posts.map((post) => (

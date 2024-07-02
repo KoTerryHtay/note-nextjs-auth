@@ -24,7 +24,7 @@ export default function LoginPage() {
             placeholder="Email"
             name="email"
             required
-            defaultValue={"user3@gmail.com"}
+            defaultValue={"user2@gmail.com"}
           />
           {state?.message?.email && (
             <ErrorFormMessage errorMessage={state.message.email} />

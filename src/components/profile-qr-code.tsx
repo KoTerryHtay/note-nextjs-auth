@@ -32,9 +32,11 @@ export default function ProfileQrCode({ userId }: { userId: string }) {
   }, [userId]);
 
   return (
-    <div className="size-52 bg-white p-2 mx-36 rounded-lg">
+    <div className="size-52 bg-white p-2 rounded-lg">
+      {/* <div className="size-52 bg-white p-2 mx-36 rounded-lg"> */}
       <QRX
-        data={`http://localhost:3000/user/${userId}/`}
+        data={`${userId}`}
+        // data={`http://localhost:3000/user/${userId}/`}
         gradient={{
           type: "linear",
           rotate: 45,

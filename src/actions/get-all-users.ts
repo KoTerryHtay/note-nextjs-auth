@@ -13,9 +13,14 @@ export async function getAllUsers() {
     orderBy: {
       id: "desc",
     },
-    include: {
+    select: {
+      id: true,
+      userName: true,
       _count: true,
     },
+    // include: {
+    //   _count: true,
+    // },
   });
 
   return { userId: +session.user.id, users };

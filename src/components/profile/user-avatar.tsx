@@ -16,6 +16,7 @@ import ExitIcon from "../icons/ExitIcon";
 import { IoQrCode } from "react-icons/io5";
 import CustomDialog from "../custom-dialog";
 import ProfileQrCode from "../profile-qr-code";
+import CameraSqScanner from "../camera-sq-scanner";
 
 export default function UserAvatar({ user }: { user: User }) {
   const [open, setOpen] = useState(false);
@@ -61,6 +62,8 @@ export default function UserAvatar({ user }: { user: User }) {
                 </div>
               </CustomDialog>
             </div>
+
+            <CameraSqScanner onClose={onClose} />
           </div>
           <div className="flex flex-col gap-1">
             <Link

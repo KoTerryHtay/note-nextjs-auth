@@ -73,7 +73,7 @@ export default function ChangeQrCode({ params }: Params) {
   }
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <div className="flex gap-2 px-5 py-2 items-center pb-10">
         <QrCodeSelect text="Body" options={bodyOption} onSelect={setBody} />
         <QrCodeSelect
@@ -86,9 +86,6 @@ export default function ChangeQrCode({ params }: Params) {
           options={eyeOption}
           onSelect={setEyeball}
         />
-        <Button className="mt-5" onClick={changeQrCode}>
-          Save
-        </Button>
       </div>
 
       <div className="size-52 bg-white p-2 mx-36 rounded-lg">
@@ -119,6 +116,9 @@ export default function ChangeQrCode({ params }: Params) {
           }}
         />
       </div>
+      <Button className="mt-5 px-[90px]" onClick={changeQrCode}>
+        Save
+      </Button>
     </div>
   );
 }
